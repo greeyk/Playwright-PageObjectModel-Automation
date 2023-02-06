@@ -6,7 +6,6 @@ from pages.login_page import LoginPage
 valid_username = "standard_user"
 valid_password = "secret_sauce"
 
-
 def test_inventory_page_load(page: Page, inventory_page: InventoryPage, login_page: LoginPage) -> None:
     inventory_page.load()
 
