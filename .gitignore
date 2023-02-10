@@ -1,0 +1,6 @@
+/test_demobank_login.py
+/test_first_example.py
+/.pytest_cache/
+/tests/.pytest_cache/
+/__pycache__/
+/.idea/

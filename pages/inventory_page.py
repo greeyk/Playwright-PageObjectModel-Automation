@@ -1,4 +1,6 @@
 from playwright.sync_api import Page
+from pages.cart_page import CartPage
+
 
 class InventoryPage:
 
@@ -6,7 +8,6 @@ class InventoryPage:
 
     def __init__(self, page: Page) -> None:
         self.page = page
-        self._cart = page.locator("#shopping_cart_container a")
         self._add_backpack_btn = page.locator("[data-test=\"add-to-cart-sauce-labs-backpack\"]")
         self._remove_backpack_btn = page.locator("[data-test=\"remove-sauce-labs-backpack\"]")
         self._menu = page.get_by_role("button", name="Open Menu")
@@ -26,5 +27,6 @@ class InventoryPage:
         self._menu.click()
         self._logout.click()
 
-    def cart_icon_click(self) -> None:
+    def cart_icon_click(self) -> CartPage:
         self._cart_icon.click()
+        return CartPage(self.page)
